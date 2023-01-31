@@ -1,0 +1,47 @@
+.container .row.content{
+  margin: 40px 0px 0px 20px;
+  background-color: #e9eefc;
+  border: 1px solid #e9eefc;
+  border-radius: 20px;
+}
+.container .row{
+  margin: 40px 50px 0px 0px;
+}
+.container .row .form-group label{
+  color: #2663FF;
+  font-weight: 600;
+  font-size: 15px;
+}
+.container .row .form-group input{
+  border-radius: 15px;
+}
+.container .row .form-group input::placeholder{
+  font-style: italic;
+
+  font-weight: 400;
+}
+.container .row button.add-button{
+  background-color: #228b39;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0px 20px 10px;
+}
+.container .row button.back-button{
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0px 20px 10px;
+}
+.container .row button:hover{
+  background-color: #7751e1;
+
+}
+.container p{
+  font-size: 32px;
+  font-weight: 600;
+  margin: 20px 0px 0px 60px;
+}

@@ -1,0 +1,21 @@
+.dashboard{
+  display: flex;
+}
+.dashboard .dashboard-wrap{
+  flex: 6;
+}
+.dashboard .dashboard-wrap .dashboard-content h1{
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  margin: 10px 800px 0px 50px;
+  border-radius: 10px;
+  font-size: 32px;
+}
+
+
+@media (max-width: 375px) {
+  .dashboard .dashboard-wrap{
+    flex: none;
+  }
+}

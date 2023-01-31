@@ -1,0 +1,58 @@
+.login-card span{
+  font-weight: 500;
+}
+.login-card span a{
+  text-decoration: none;
+  color: #8699DA;
+}
+.login-card span a:hover{
+  text-decoration: underline;
+
+}
+
+.login-wrap{
+  margin-top: 100px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+.login-wrap .login-card h1 {
+  color: #444B59;
+  font-weight: 600;
+}
+.login-wrap .login-card label {
+  color: #444B59;
+  font-weight: 600;
+}
+.login-wrap .login-card input[type = text] {
+  border: 2px solid #8699DA;
+  border-radius: 20px;
+}
+.login-wrap .login-card input[type = password] {
+  border: 2px solid #8699DA;
+  border-radius: 20px;
+}
+.login-wrap .login-card input::placeholder {
+  font-style: italic;
+}
+.login-wrap .login-card button {
+  background-color: #8699DA;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 80px;
+  border: none;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 20px;
+}
+.login-wrap .login-card button:hover {
+  background-color: #5a56b7;
+
+}
+
+@media (max-width: 375px) {
+  .login-wrap{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}

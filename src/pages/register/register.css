@@ -1,0 +1,52 @@
+.register-wrap{
+  margin-top: 50px;
+  margin-left: 450px;
+  margin-right: 450px;
+}
+
+.register-wrap input[type = text] {
+  border: 2px solid #8699DA;
+  border-radius: 15px;
+}
+.register-wrap input::placeholder {
+  font-style: italic;
+}
+.register-wrap select {
+  border: 2px solid #8699DA;
+  border-radius: 15px;
+}
+.register-wrap input[type = password] {
+  border: 2px solid #8699DA;
+  border-radius: 15px;
+}
+
+.register-wrap button {
+  background-color: #8699DA;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 80px;
+  border: none;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 20px;
+}
+.register-wrap button:hover {
+  background-color: #5a56b7;
+}
+.register-wrap h1 {
+  color: #444B59;
+  font-weight: 600;
+}
+.register-wrap label {
+  color: #444B59;
+  font-weight: 600;
+}
+
+@media (max-width: 375px) {
+  .register-wrap{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+}
