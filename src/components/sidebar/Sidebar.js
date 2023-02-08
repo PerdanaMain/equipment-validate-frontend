@@ -1,8 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+import { server } from "../../server";
 
 import "./sidebar.css";
 const Sidebar = () => {
+  const accessToken = sessionStorage.getItem("accessToken");
+  const navigate = useNavigate();
+
+  const logoutHandler = async () => {
+    try {
+      await axios.delete(`${server}/logout`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      sessionStorage.clear();
+      localStorage.clear();
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="sidebar">
       <div className="top">
@@ -24,7 +45,7 @@ const Sidebar = () => {
               <span>Equipments</span>
             </div>
           </Link>
-          <div className="li" role={"button"}>
+          <div className="li" role={"button"} onClick={logoutHandler}>
             <span>Logout</span>
           </div>
         </div>

@@ -15,6 +15,9 @@
 .container .row .form-group input{
   border-radius: 15px;
 }
+.container .row .form-group select{
+  border-radius: 15px;
+}
 .container .row .form-group input::placeholder{
   font-style: italic;
 

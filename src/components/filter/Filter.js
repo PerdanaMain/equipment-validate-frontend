@@ -1,12 +1,27 @@
-import React from "react";
+import { React, useState } from "react";
 
 import "./filter.css";
 const Filter = () => {
+  const [hostname, setHostname] = useState("");
+  const [floor, setFloor] = useState("");
+  const [func, setFunc] = useState("");
+  const [ctg, setCtg] = useState("");
+  const [group, setGroup] = useState("");
+  const [rack, setRack] = useState("");
+  const [status, setStatus] = useState("On");
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="container">
       <div className="row content">
         <p>Filter By</p>
-        <form action="" className="row">
+        <form onSubmit={submitHandler} className="row">
           <div className="col-md-6 col-sm-12">
             <div className="form-group mb-3">
               <label htmlFor="hname" className="form-label">
@@ -17,6 +32,10 @@ const Filter = () => {
                 id="hname"
                 className="form-control"
                 placeholder="hostname"
+                value={hostname}
+                onChange={(e) => {
+                  setHostname(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -30,6 +49,10 @@ const Filter = () => {
                 id="floor"
                 className="form-control"
                 placeholder="floor"
+                value={floor}
+                onChange={(e) => {
+                  setFloor(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -43,6 +66,10 @@ const Filter = () => {
                 id="function"
                 className="form-control"
                 placeholder="function"
+                value={func}
+                onChange={(e) => {
+                  setFunc(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -56,6 +83,10 @@ const Filter = () => {
                 id="category"
                 className="form-control"
                 placeholder="category"
+                value={ctg}
+                onChange={(e) => {
+                  setCtg(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -69,6 +100,10 @@ const Filter = () => {
                 id="group"
                 className="form-control"
                 placeholder="group"
+                value={group}
+                onChange={(e) => {
+                  setGroup(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -82,6 +117,10 @@ const Filter = () => {
                 id="rack"
                 className="form-control"
                 placeholder="rack"
+                value={rack}
+                onChange={(e) => {
+                  setRack(e.target.value);
+                }}
               />
             </div>
           </div>
@@ -90,12 +129,21 @@ const Filter = () => {
               <label htmlFor="status" className="form-label">
                 Status
               </label>
-              <input
-                type="text"
+
+              <select
                 id="status"
-                className="form-control"
-                placeholder="status"
-              />
+                className="form-select"
+                value={status}
+                onChange={(e) => {
+                  setStatus(e.target.value);
+                }}
+              >
+                <option value="On">On</option>
+                <option value="Off">Off</option>
+                <option value="Passive">Passive</option>
+                <option value="Not Found">Not Found</option>
+                <option value="Dismantle">Dismantle</option>
+              </select>
             </div>
           </div>
           <button className="btn col-md-2">Search</button>

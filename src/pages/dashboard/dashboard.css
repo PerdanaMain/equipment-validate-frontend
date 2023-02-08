@@ -12,6 +12,10 @@
   border-radius: 10px;
   font-size: 32px;
 }
+.dashboard .dashboard-wrap .dashboard-content .row {
+  margin-left: 40px;
+  margin-right: 20px;
+}
 
 
 @media (max-width: 375px) {

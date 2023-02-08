@@ -23,8 +23,74 @@
 .equipment .equipment-wrap .equipment-content .row.result{
   margin: 0px 10px 0px 20px;
 }
+.equipment .equipment-wrap .equipment-content .row.result .card .card-header p{
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 130px;
+}
+.equipment .equipment-wrap .equipment-content .row.result .card .card-body p{
+  font-weight: 700;
+  font-size: 13px;
+}
 
+.equipment .equipment-wrap .equipment-content .row.result .card .card-body .head-label{
+  font-weight: 600;
+}
 
+.container .row.content{
+  margin: 40px 0px 0px 20px;
+  background-color: #e9eefc;
+  border: 1px solid #e9eefc;
+  border-radius: 20px;
+}
+.container .row{
+  margin: 40px 50px 0px 0px;
+}
+.container .row .form-group label{
+  color: #2663FF;
+  font-weight: 600;
+  font-size: 15px;
+}
+.container .row .col-md-12 .form-label{
+  color: #2663FF;
+  font-weight: 600;
+  font-size: 15px;
+}
+.container .row .col-md-12{
+  margin-left: 50px;
+}
+.container .row .row .form-group{
+  margin-left: 40px;
+  margin-top: -20px;
+}
+.container .row .form-group input{
+  border-radius: 15px;
+}
+.container .row .form-group select{
+  border-radius: 15px;
+}
+.container .row .form-group input::placeholder{
+  font-style: italic;
+
+  font-weight: 400;
+}
+.container .row button{
+  background-color: #2663ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0px 20px 60px;
+}
+.container .row button:hover{
+  background-color: #7751e1;
+
+}
+.container p{
+  font-size: 32px;
+  font-weight: 600;
+  margin: 20px 0px 0px 60px;
+}
 
 @media (max-width: 375px) {
   .equipment .equipment-wrap{

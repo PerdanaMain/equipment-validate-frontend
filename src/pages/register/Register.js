@@ -12,8 +12,8 @@ const Register = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [phone, setPhone] = useState("");
-  const [gender, setGender] = useState("");
-  const [jobId, setJobid] = useState("");
+  const [gender, setGender] = useState("Laki - Laki");
+  const [jobId, setJobid] = useState(1);
   const [snumber, setSnumber] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -163,8 +163,8 @@ const Register = () => {
                   setGender(e.target.value);
                 }}
               >
-                <option value="l">Male</option>
-                <option value="p">Female</option>
+                <option value="Laki - Laki">Male</option>
+                <option value="Perempuan">Female</option>
               </select>
             </div>
           </div>
@@ -279,7 +279,7 @@ const Register = () => {
           </Modal.Header>
 
           <Modal.Body>
-            <div className="text-danger d-flex align-items-center">
+            <div className="text-success d-flex align-items-center">
               <div className="ps-3">{msg}</div>
             </div>
           </Modal.Body>
@@ -289,7 +289,12 @@ const Register = () => {
               Close
             </Button>
             {msg === sucess ? (
-              <Button variant="success" onClick={handleClose}>
+              <Button
+                variant="success"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
                 Login
               </Button>
             ) : (
