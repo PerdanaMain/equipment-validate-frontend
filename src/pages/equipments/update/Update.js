@@ -69,6 +69,7 @@ const Update = () => {
       setLocation(get.data.data.location);
       setBrand(get.data.data.brand);
       setType(get.data.data.type);
+      setRemark(get.data.data.remark);
     } catch (error) {
       console.log(error.message);
     }
