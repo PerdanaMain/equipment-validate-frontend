@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   const [users, setUsers] = useState("");
   const [on, setOn] = useState("");
-  const [nf, setNf] = useState("");
+  const [ds, setDs] = useState("");
   const [off, setOff] = useState("");
   const [psv, setPsv] = useState("");
   const [tempId, setTempId] = useState("");
@@ -86,11 +86,11 @@ const Dashboard = () => {
     try {
       const on = await axios.get(`${server}/data/status/on`);
       const off = await axios.get(`${server}/data/status/off`);
-      const nf = await axios.get(`${server}/data/status/nf`);
+      const ds = await axios.get(`${server}/data/status/nf`);
       const psv = await axios.get(`${server}/data/status/psv`);
       setOn(on.data.data);
       setOff(off.data.data);
-      setNf(nf.data.data);
+      setDs(ds.data.data);
       setPsv(psv.data.data);
     } catch (e) {
       console.log(e.message);
@@ -150,7 +150,7 @@ const Dashboard = () => {
                     <div className="col-8">
                       <div className="numbers">
                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                          On
+                          Equipment On
                         </p>
                         <h5 className="font-weight-bolder mb-0">{on.length}</h5>
                       </div>
@@ -174,7 +174,7 @@ const Dashboard = () => {
                     <div className="col-8">
                       <div className="numbers">
                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                          Off
+                          Equipment Off
                         </p>
                         <h5 className="font-weight-bolder mb-0">
                           {off.length}
@@ -200,9 +200,9 @@ const Dashboard = () => {
                     <div className="col-8">
                       <div className="numbers">
                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                          Not Found
+                          Equipment Dismantle
                         </p>
-                        <h5 className="font-weight-bolder mb-0">{nf.length}</h5>
+                        <h5 className="font-weight-bolder mb-0">{ds.length}</h5>
                       </div>
                     </div>
                     <div className="col-4 text-end">
@@ -224,7 +224,7 @@ const Dashboard = () => {
                     <div className="col-8">
                       <div className="numbers">
                         <p className="text-sm mb-0 text-capitalize font-weight-bold">
-                          Passive
+                          Equipment Passive
                         </p>
                         <h5 className="font-weight-bolder mb-0">
                           {psv.length}
@@ -274,9 +274,7 @@ const Dashboard = () => {
                           <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                             Gender
                           </th>
-                          <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            Phone
-                          </th>
+
                           <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             Email
                           </th>
@@ -305,11 +303,7 @@ const Dashboard = () => {
                                 <h6 className="mb-0 text-sm">{data.gender}</h6>
                               </div>
                             </td>
-                            <td className="align-middle text-center text-sm">
-                              <span className="text-xs font-weight-bold">
-                                {data.phone}
-                              </span>
-                            </td>
+
                             <td className="align-middle text-center text-sm">
                               <span className="text-xs font-weight-bold">
                                 {data.email}

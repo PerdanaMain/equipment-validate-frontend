@@ -125,6 +125,8 @@ const DataCenter = () => {
     XLSX.utils.book_append_sheet(wb, ws, "MySheet1");
     XLSX.writeFile(wb, `Equipment-Validate-${dateNow.toUTCString()}.xlsx`);
   };
+
+  let counter = 1;
   return (
     <div className="equipment">
       <Sidebar />
@@ -306,98 +308,57 @@ const DataCenter = () => {
                 </Alert>
               </div>
             ) : (
-              Object.values(equipments).map((data, index) => (
-                <div className="col-md-4 col-sm-12 my-3" key={index}>
-                  <div className="card">
-                    <div className="card-header">
-                      <p>{data.rack}</p>
-                    </div>
-                    <div className="card-body">
-                      <p className="text-muted">
-                        Last Updated At : {data.updatedAt.slice(0, 10)}
-                      </p>
-                      <p className="text-muted">
-                        Last Updated By : {data.updated_by}
-                      </p>
-                      <Table striped bordered hover>
-                        <tbody>
-                          <tr>
-                            <td className="head-label">Location</td>
-                            <td>{data.location}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Floor</td>
-                            <td>{data.floor}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Rack</td>
-                            <td>{data.rack}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Hostname</td>
-                            <td>{data.hostname}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Capcity</td>
-                            <td>{data.capacity + " "}u</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Brand</td>
-                            <td>{data.brand}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Type</td>
-                            <td>{data.type}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">S / N</td>
-                            <td>{data.serial_number}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Function</td>
-                            <td>{data.function}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Group</td>
-                            <td>{data.group}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Status</td>
-                            <td>{data.status}</td>
-                          </tr>
-                          <tr>
-                            <td className="head-label">Remark</td>
-                            <td>{data.remark}</td>
-                          </tr>
-                        </tbody>
-                      </Table>
-                    </div>
-                    <div className="card-footer text-center">
-                      <Link
-                        to={`update/${data.id}`}
-                        className="btn btn-success me-3"
-                      >
-                        <img src={edit} alt="add-logo" />
-                        Edit
-                      </Link>
+              <Table striped>
+                <thead>
+                  <tr className="text-center">
+                    <th>No</th>
+                    <th>Hostname</th>
+                    <th>Floor</th>
+                    <th>Brand</th>
+                    <th>Rack</th>
+                    <th>Function</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.values(equipments).map((data, index) => (
+                    <tr key={index} className="text-center">
+                      <td>{counter++}</td>
+                      <td>{data.hostname}</td>
+                      <td>{data.floor}</td>
+                      <td>{data.brand}</td>
+                      <td>{data.rack}</td>
+                      <td>{data.function}</td>
+                      <td>{data.status}</td>
+                      <td>
+                        <Link
+                          to={`update/${data.id}`}
+                          className="btn btn-success me-1"
+                        >
+                          <img src={edit} alt="add-logo" />
+                          Edit
+                        </Link>
 
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => {
-                          deleteShow(data.id, data.hostname);
-                        }}
-                      >
-                        <img src={del} alt="add-logo" />
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => {
+                            deleteShow(data.id, data.hostname);
+                          }}
+                        >
+                          <img src={del} alt="add-logo" />
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
             )}
           </div>
         </div>
       </div>
+
       {msg === null ? (
         ""
       ) : (
