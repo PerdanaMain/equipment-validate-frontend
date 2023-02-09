@@ -279,9 +279,15 @@ const Register = () => {
           </Modal.Header>
 
           <Modal.Body>
-            <div className="text-success d-flex align-items-center">
-              <div className="ps-3">{msg}</div>
-            </div>
+            {msg === "Please Get The Right Access Number" ? (
+              <div className="text-success d-flex align-items-center">
+                <div className="ps-3">{msg}</div>
+              </div>
+            ) : (
+              <div className="text-success d-flex align-items-center">
+                <div className="ps-3">{msg}</div>
+              </div>
+            )}
           </Modal.Body>
 
           <Modal.Footer>

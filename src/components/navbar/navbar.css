@@ -15,6 +15,65 @@
   
 }
 
+
+.navbar .center {
+  padding-left: 10px;
+}
+.navbar .center .ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar .center .ul .title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #999;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.navbar .center .ul .li {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px 0px 5px 0px;
+}
+.navbar .center .ul .li:hover {
+  background-color: #ece8ff;
+}
+.navbar .center .ul .li .icon {
+  font-size: 18px;
+  color: darkblue;
+}
+.navbar .center .ul .li span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  margin-left: 10px;
+}
+.navbar .bottom {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.navbar .bottom .colorOption {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #7451f8;
+  cursor: pointer;
+  margin: 5px;
+}
+.navbar .bottom .colorOption:nth-child(1) {
+  background-color: whitesmoke;
+}
+.navbar .bottom .colorOption:nth-child(2) {
+  background-color: #333;
+}
+.navbar .bottom .colorOption:nth-child(3) {
+  background-color: darkblue;
+}
+
 /* ? Toogle Menu */
 #menu-button{
   width: 32px;
